@@ -67,7 +67,7 @@ def delete(sno):
 def search():
     if request.method == "POST":
         srch = request.form.get('search')
-        data = todo.query.filter(todo.title.ilike(f"%{srch}%")).all()
+        data = Todo.query.filter(Todo.title.ilike(f"%{srch}%")).all()
         print(data)
         return render_template('index.html',allTodo = data)
 
